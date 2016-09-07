@@ -1,0 +1,123 @@
+<br/>ViSimulator for Notepad++
+<br/>Simulates/Emulates vi/vim in Notepad++
+<br/>
+<br/>Description:
+<br/>ViSimulator for notepad++ is a plug-in for notepad++, which makes it possible to edit as vi/vim in notepad++. ViSimulator simulates/emulates most frequently-used vi/vim commands to provide more powerful editing capability for notepad++. 
+
+<br/>Commands supported currently :     
+<br/>Motions
+<br/>0: move the cursor to colum 1 (hard beg-of-line) 
+<br/>$: move the cursor to end-of-line 
+<br/>^: move the cursor to the first non-blank character (soft beg-of-line) 
+<br/>-: move the cursor to the first non-blank character (soft beg-of-line) of the previous [count] line 
+<br/>+,: move the cursor the first non-blank character (soft beg-of-line) of the next [count] line
+<br/>h: move the cursor to left [count] colum 
+<br/>j: move the cursor to down [count] line
+<br/>k: move the cursor to up [count] line 
+<br/>l: move the cursor to right [count] colum 
+<br/>w: move the cursor to the beginning of next [count] word 
+<br/>b: move the cursor to the beginning of previous [count] word 
+<br/>e: move the cursor to the end of next [count] word 
+<br/>ge: move the cursor to the end of previous [count] word 
+<br/>W: move the cursor to the beginning of next [count] WORD 
+<br/>B: move the cursor to the beginning of previous [count] WORD 
+<br/>E: move the cursor to the end of next [count] WORD 
+<br/>gE: move the cursor to the end of previous [count] WORD 
+<br/>f* ('*' can be any character): move the cursor to next [count] appearance of the character in current line (e.g. fa fb fc ...) 
+<br/>F*: move the cursor to previous [count] occurrence of the character in current line (e.g. Fa Fb Fc ...) 
+<br/>t*: move the cursor to just before the next [count] occurrence of the character in current line 
+<br/>T*: move the cursor to just after the previous [count] occurrence of the character in current line 
+<br/>;: repeat last f*/F*/t*/T* search 
+<br/>,: repeat last f*/F*/t*/T* search in opposite direction 
+<br/>H: move the cursor to the first non-blank character (soft beg-of-line) of the line at the top of the screen 
+<br/>M: move the cursor to the first non-blank character (soft beg-of-line) of the line at the middle of the screen 
+<br/>L: move the cursor to the first non-blank character (soft beg-of-line) of the line at the bottom of the screen 
+<br/>gg: move the cursor to the first non-blank character of the line(default the first) of the file 
+<br/>G: move the cursor to the last line of the file (if a count is given(e.g. 10G), move to that line) 
+<br/>%: move to the matching parenthesis (or similar). If a count is given(e.g. 50%), move the cursor to the line percentage of the file 
+<br/>*: (literal asterisk) search forward for the [count] occurrence of the word under the cursor 
+<br/>#: (literal hash) search backward for the [count] occurrence of the word under the cursor 
+<br/>Ctrl-d: Scroll file downward for half page (window) 
+<br/>Ctrl-u: Scroll file upward for half page (window) 
+<br/>Ctrl-f: Scroll file downward for one page (window) 
+<br/>Ctrl-b: Scroll file upward for one page (window) 
+<br/>z<return>: scroll the view so that current line is at the top of the screen, and move the cursor to the first non-blank character 
+<br/>z.: scroll the view so that current line is at the middle of the screen, and move the cursor to the first non-blank character 
+<br/>z-: scroll the view so that current line is at the bottom of the screen, and move the cursor to the first non-blank character 
+<br/>zt: scroll the view so that current line is at the top of the screen 
+<br/>zz: scroll the view so that current line is at the middle of the screen 
+<br/>zb: scroll the view so that current line is at the bottom of the screen 
+<br/>
+<br/>Text Objects
+<br/>
+<br/>i[: select inner [] block, not including [ and ]. 
+<br/>sample: 'di]' or 'di[' to delete contents betwen [], 'ci]' or 'ci[' to change contents between [], 'yi]' or 'yi[' to copy contents <br/>between []. 
+<br/>i]: select inner [] block, not including [ and ]. refer to 'i[' 
+<br/>i{: select inner {} block, not including { and }. refer to 'i[' 
+<br/>i}: select inner {} block, not including { and }. refer to 'i[' 
+<br/>i<: select inner <> block, not including < and >. refer to 'i[' 
+<br/>i>: select inner <> block, not including < and >. refer to 'i[' 
+<br/>i": select inner quotation marks "", not including ". refer to 'i[' 
+<br/>i': select inner quotation marks '', not including '. refer to 'i[' 
+<br/>a[: select outer [] block, including [ and ]. refer to 'i[' 
+<br/>sample: 'da]' or 'da[' to delete contents betwen [], 'ca]' or 'ca[' to change contents between [], 'ya]' or 'ya[' to copy contents <br/>between [].
+<br/>a]: select outer [] block, including [ and ]. refer to 'a[' 
+<br/>a{: select outer {} block, including { and }. refer to 'a[' 
+<br/>a}: select outer {} block, including { and }. refer to 'a[' 
+<br/>a<: select outer <> block, including < and >. refer to 'a[' 
+<br/>a>: select outer <> block, including < and >. refer to 'a[' 
+<br/>a": select outer quotation marks "", including ". refer to 'a[' 
+<br/>a': select outer quotation marks '', including ". refer to 'a['
+<br/>
+<br/>Regular commands
+<br/>i: enter input mode to insert text before the cursor
+<br/>a: enter input mode to append text after the cursor
+<br/>gi: enter input mode where insert mode was exited last time
+<br/>I: enter input mode before the first non-blank in the line (soft beginning-of-line)
+<br/>gI: enter input mode at the column one (hard beginning-of-line)
+<br/>A: enter input mode to append text after end of line
+<br/>R: enter input mode in overtype mode
+<br/>o: insert an new line below the cursor and enter input mode at column 1 of the new line
+<br/>O: insert an new line above the cursor and enter input mode at column 1 of the new line
+<br/>s: delete [count] character start from that under the cursor and enter input mode there
+<br/>S: delete [count] line down from the current line (include current line), and reserve one blank line, then enter input mode at column <br/>1 of this blank line. 
+<br/>C: remove all characters from the cursor to end-of-line and enter input mode there
+<br/>x: delete [count] character start from the one under the cursor, and copy them to the clipboard
+<br/>X: delete [count] character before the cursor, and copy them to the clipboard 
+<br/>~: toggle case to upper or lower of current character 
+<br/>r*: (where '*' is any character), replace [count] character that starts from the one under the cursor with the given character
+<br/>J: join the current line with the next one, leaving exactly one space charactr between them
+<br/>u: undo last action
+<br/>Ctrl-r: redo last undone action
+<br/>D: remove all characters start from that under the cursor to end-of-line
+<br/>Y: copy current line
+<br/>p: paste text in the clipboard after the cursor
+<br/>P: paste text in the clipboard at the cursor
+<br/>v: enter visual mode
+<br/>V: enter visual mode linewise
+<br/>Ctrl-e: scroll the view one line upward (keep cursor on screen)
+<br/>Ctrl-y: scroll the view one line downward (keep cursor on screen)
+<br/>ZZ: save current file and close it (same as :wq)
+<br/>.: repeat last command
+<br/>d{w|b|B|e|0|$||}{[t|T|f|F]*}: (where, '*' is any character) delete the specified region, and copy them to the clipboard
+<br/>c{w|b|B|e|0|$||}{[t|T|f|F]*}: (where, '*' is any character) delete the specified region, and copy them to the clipboard, then enter <br/>input mode
+<br/>y{w|b|B|e|0|$||}{[t|T|f|F]*}: (where, '*' is any character) copy the specified region to the clipboard
+<br/>gu{w|b|B|e|0|$||}{[t|T|f|F]*}: (where, '*' is any character) change the characters in specified region to lower case.
+<br/>gU{w|b|B|e|0|$||}{[t|T|f|F]*}: (where, '*' is any character) change the characters in specified region to upper case.
+<br/>>{gg|G}: Indent all the lines from start/end/count line of the file to current line.
+<br/><{gg|G}: Unindent all the lines from start/end/count line of the file to current line.
+<br/>>>: indent all the lines in the specified region
+<br/><<:unindent all the lines in the specified region
+<br/>
+<br/>Ex Commands
+<br/>:w : save current file 
+<br/>:q : close current file 
+<br/>:wq : save and close current file 
+<br/>:bd : close current file 
+<br/>
+<br/>Installation
+<br/>Download ViSimulator.dll and copy it to plugins directory of notepad++, then restart notepad++, you will find ViSimulator below <br/>plugins menu. 
+<br/>
+<br/>IMPORTANT
+<br/>It can only work under Notepad++ UNICODE edition, and tested under the following Notepad++ unicode version, 6.4.2, 6.5.1, 6.5.3 and 6<br/>.5.5. but it should work under most Notepad++ unicode version (which is not promised, cause of not being tested). 
+<br/>
